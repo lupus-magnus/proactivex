@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProActive X</title>
+    
+
+    <script src="demo-v1_arquivos/jquery.js"></script>
+    <script src="demo-v1_arquivos/tether.js"></script>
+    <link rel="stylesheet" href="demo-v1_arquivos/bootstrap.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="demo-v1_arquivos/bootstrap.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="demo-v1_arquivos/styles.css">
+    
+    <link href="demo-v1_arquivos/css2_002.css" rel="stylesheet">     
+    <link href="demo-v1_arquivos/css2.css" rel="stylesheet"> 
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+<body>
+<script src="demo-v1_arquivos/Chart.js"></script>
+    <div id="welcome" class="jumbotron jumbotron-fluid text-white text-center">
+        <div class="container justify-items-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="demo-v1_arquivos/lupus.png" alt="" height="200px">
+                </div>
+
+                <div class="col-md-8">
+                    <h1 class="display-3">ProActive X</h1>
+                    <p class="lead">o seu aplicativo de acompanhamento do período...</p>
+                </div>
+                <div class="col-md-2">
+                    <img src="demo-v1_arquivos/ufrj-logo.png" alt="" height="200px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="progress-container" class="container">
+        <h2>Parabéns! Você já completou <span id="remainingDays">66.67%</span> do PLE.</h2>
+        <p id="message">Faltam apenas mais 28 dias. Aguente firme!</p>
+        <div id="myProgress">
+            <div id="myBar" style="width: 67%;"></div>
+          </div>
+    </div>
+    
+    <div id="container" class="svg-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+        <canvas id="myChart" width="1354" style="display: block; width: 1354px; height: 677px;" height="677" class="chartjs-render-monitor"></canvas>
+    </div>
+    <script src="demo-v1_arquivos/script.js"></script>
+    
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

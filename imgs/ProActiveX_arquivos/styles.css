@@ -1,0 +1,45 @@
+body{
+    background-color: #3b444b;
+    color: #ddd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#welcome{
+     background-color:#232b2b; 
+}
+
+#header, h1{
+    animation-name: fadein;
+    animation-duration: 2s;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#myProgress {
+    width: 90%;
+    background-color: #414a4c;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #810000;
+    
+}
+
+#progress-container text{
+    justify-content: center;
+    margin: auto;
+}
+
+#progress-container{
+    padding: 50px;
+}

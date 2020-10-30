@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProActive X</title>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <div id="welcome" class="jumbotron jumbotron-fluid text-white text-center">
+        <div class="container justify-items-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="imgs/lupus.png" height="200px" alt="">
+                </div>
+
+                <div class="col-md-8">
+                    <h1 class="display-3">Pro Active X</h1>
+                    <p class="lead">o seu aplicativo de acompanhamento do período...</p>
+                </div>
+                <div class="col-md-2">
+                    <img src="imgs/ufrj-logo.png" height="200px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='progress-container' class='container'>
+        <h2>Parabéns! Você já completou <span id='remainingDays'></span> do PLE.</h2>
+        <p id="message"></p>
+        <div id="myProgress">
+            <div id="myBar"></div>
+          </div>
+    </div>
+    <div id='myForm' class='hidden'>
+        <form>
+            <h2>Organizador de Disciplinas</h2>
+            <p>Por favor, entre com as disciplinas cursadas e suas respectivas notas em cada uma. As notas devem ser separadas por vírgulas, e usar ponto como separação decimal.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="disciplina1">Nova disciplina:</label>
+                    <input type="text" placeholder='História da Magia'>
+                </div>
+                <div class="col-md-4">
+                    <label for="nota1">Nota:</label>
+                    <input type="number" min=0.0 max=10.0 step=0.1 placeholder='provavelmente zero...' id='nota1'>
+                </div>
+                <div class="col-sm-4">
+                    <button type='button' id='addButton' class='btn btn-danger'>Adicionar</button>
+                </div>
+            </div>           
+            <br>
+            <button type='submit' id='submit' class='btn btn-warning'>Pronto!</button>
+        </form>
+    </div>
+    <div id="container" class="svg-container">
+        <canvas id="myChart" class='blurred' width="160" height="90"></canvas>
+            <div id='convite' class='container align-middle'>
+                <p>Deseja fazer um acompanhamento personalizado do seu progresso?</p>
+                <button type='button' id='letsGo' class='btn btn-warning'>Vamos!</button>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
