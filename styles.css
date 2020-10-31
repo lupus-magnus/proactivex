@@ -50,13 +50,15 @@ body{
     position: relative;
     /* vertical-align: middle; */
     text-align: center;
-    height: 20px;
+    height: 0px;
 }
 
 .blurred{
     filter: blur(2px);
 }
-
+.row{
+    margin: 15px;
+}
 #convite{
     z-index: 1050;
     padding: 70px;

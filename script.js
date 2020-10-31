@@ -115,8 +115,27 @@ var myChart = new Chart(ctx, {
 // chart.canvas.parentNode.style.height = '128px';
 // chart.canvas.parentNode.style.width = '128px';
 //Para quando o usuário for interagir com os gráficos:
-letsGo = document.getElementById('letsGo')
-letsGo.onclick = showForm
+var ids = 0;
+
+function addSubject(){
+  novaDisciplina = document.getElementById('disciplina1').value;
+  novaNota = document.getElementById('nota1').value;
+  mural = document.getElementById('container-disciplinas')
+  mural.innerHTML += `
+  <div class="row">
+    <div class="col-sm-5">
+      ${novaDisciplina}
+    </div>
+    <div class="col-sm-5">
+      ${novaNota}
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class='btn btn-secondary'> + </button>
+    </div>
+  </div>
+  `
+
+}
 
 function showForm(){
   //Primeiramente vamos tirar a caixa de aviso e deixar aparecer o gráfico
@@ -128,3 +147,10 @@ function showForm(){
   myForm = document.getElementById('myForm')
   myForm.classList.remove('hidden')
 }
+
+letsGo = document.getElementById('letsGo')
+letsGo.onclick = showForm
+addBtn = document.getElementById('addButton')
+addBtn.addEventListener('click',addSubject)
+
+

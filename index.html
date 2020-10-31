@@ -45,22 +45,34 @@
     <div id='myForm' class='hidden'>
         <form>
             <h2>Organizador de Disciplinas</h2>
-            <p>Por favor, entre com as disciplinas cursadas e suas respectivas notas em cada uma. As notas devem ser separadas por vírgulas, e usar ponto como separação decimal.</p>
+            <p>Por favor, entre com as disciplinas cursadas e suas respectivas notas em cada uma. </p>
+            <p>Você vai gostar disso...</p>
+            <div id="disciplinas">
+                <div id="container-disciplinas">
+                    
+                </div>
+            
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="disciplina1">Nova disciplina:</label>
+                        <input id='disciplina1' type="text" placeholder='História da Magia'>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="nota1">Nota:</label>
+                        <input type="number" min=0.0 max=10.0 step=0.1 placeholder='provavelmente zero...' id='nota1'>
+                    </div>
+                    
+                </div>           
+            <br>
+            </div>
             <div class="row">
-                <div class="col-md-4">
-                    <label for="disciplina1">Nova disciplina:</label>
-                    <input type="text" placeholder='História da Magia'>
-                </div>
-                <div class="col-md-4">
-                    <label for="nota1">Nota:</label>
-                    <input type="number" min=0.0 max=10.0 step=0.1 placeholder='provavelmente zero...' id='nota1'>
-                </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <button type='button' id='addButton' class='btn btn-danger'>Adicionar</button>
                 </div>
-            </div>           
-            <br>
-            <button type='submit' id='submit' class='btn btn-warning'>Pronto!</button>
+                <div class="col-sm-6">
+                    <button type='submit' id='submit' class='btn btn-warning'>Pronto!</button>
+                </div>
+            </div>
         </form>
     </div>
     <div id="container" class="svg-container">
