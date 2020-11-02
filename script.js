@@ -111,30 +111,48 @@ var myChart = new Chart(ctx, {
       }
   }
 });
-// chart = document.getElementById('myChart')
-// chart.canvas.parentNode.style.height = '128px';
-// chart.canvas.parentNode.style.width = '128px';
+
 //Para quando o usuário for interagir com os gráficos:
 var ids = 0;
+var materiasObj = [ //lista de vários objetos (cada um uma matéria)
+  //materia1 = {
+  //  id = num,
+  //  nome = str,
+  //  notas = array }
+];
 
 function addSubject(){
   novaDisciplina = document.getElementById('disciplina1').value;
   novaNota = document.getElementById('nota1').value;
+  console.log(typeof(novaNota))
+  arrayNotas = []
+  arrayNotas.push(parseFloat(novaNota))
+
+  //Criando o objeto da disciplina:
+  newData = {
+    id: ids,
+    name: novaDisciplina,
+    notas: arrayNotas
+  };
+  
+  materiasObj.push(newData);
+
   mural = document.getElementById('container-disciplinas')
   mural.innerHTML += `
   <div class="row">
-    <div class="col-sm-5">
+    <div class="col-5">
       ${novaDisciplina}
     </div>
-    <div class="col-sm-5">
+    <div class="col-5">
       ${novaNota}
     </div>
-    <div class="col-sm-2">
-      <button type="button" class='btn btn-secondary'> + </button>
+    <div class="col-2">
+      <button id=${ids} type="button" class='btn btn-secondary add-grade-btn'> + </button>
     </div>
   </div>
   `
-
+  console.log(materiasObj);
+  ids+=1
 }
 
 function showForm(){
