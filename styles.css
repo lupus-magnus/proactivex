@@ -45,7 +45,11 @@ body{
 }
 
 /* Seção de gráficos */
-
+#container{
+    width: 70vw;
+    margin: auto;
+    
+}
 #myChart{
     position: relative;
     /* vertical-align: middle; */

@@ -45,7 +45,7 @@ fazer os gráficos de notas.
 */
 
 var ctx = document.getElementById('myChart').getContext('2d');
-const chartColors = ['#660000','#0e1111','#cf7500','#330000','#353839','#f0a500']
+const chartColors = ['#660000','#0e1111','#cf7500','#330000','#353839','#f0a500','#740e05','#ffbf00',"#414a4c"]
 var myChart = new Chart(ctx, {
   type: 'line',
   data: {
@@ -188,7 +188,7 @@ var add_btns = []
 function addGrade(event){
   id = event.target.id
   valorNovo = (10*Math.random()).toFixed(1)
-  materiasObj[id].notas.push(valorNovo)
+  materiasObj[id].notas.push(parseFloat(valorNovo))
   console.log(materiasObj[id].notas)
   console.log("Clicamos no botão " + id)
   novas_notas = document.getElementById(`notas_materia${id}`)
@@ -204,21 +204,47 @@ function update_addBtns_list(){
 
 //Agora, vamos tentar plotar nossos novos dados no gráfico!
 function updateChart(){
-  let dadoqualquer = [1,2,3,4,5]
-  //trecho para criar uma nova materia no gráfico:
-  let algonovo = {
-    label: "genérico_teste",
-    fill: "false",
-    data: dadoqualquer,
-    borderColor: "green", //aqui vai entrar aquele mecanismo de usar o id pra calcular o resto duma lista pra gerar sempre cor bonitinha da paleta.
-    lineTension: 0,
-    pointRadius: 1.3,
-    borderWidth: 3
-  }
-  myChart.data.datasets = [] //Limpa o gráfico. Pode ser usado num botão diferente, vamos pensar sobre.
-  myChart.data.datasets.push(algonovo)
-  console.log(myChart.data)
-  myChart.update();
+  // let dadoqualquer = [1,2,3,4,5]
+  // //trecho para criar uma nova materia no gráfico:
+  // let algonovo = {
+  //   label: "genérico_teste",
+  //   fill: "false",
+  //   data: dadoqualquer,
+  //   borderColor: "green", //aqui vai entrar aquele mecanismo de usar o id pra calcular o resto duma lista pra gerar sempre cor bonitinha da paleta.
+  //   lineTension: 0,
+  //   pointRadius: 1.3,
+  //   borderWidth: 3
+  // }
+  // myChart.data.datasets = [] //Limpa o gráfico. Pode ser usado num botão diferente, vamos pensar sobre.
+  // myChart.data.datasets.push(algonovo)
+  // console.log(myChart.data)
+  // myChart.update();
+  
+  //Testando daqui pra baixo. Em caso de erro, apague tudo.
+  myChart.data = {}
+  myChart.data.datasets = []
+  myChart.data.labels = [1,2,3,4,5]
+  let disciplina = {}
+  materiasObj.forEach(item => {
+    console.log(`agora operando ${item.name}...`)
+    console.log('notas: ',item.notas)
+    newID = materiasObj.indexOf(item)
+    console.log(item, newID)
+    
+    console.log('agora deveriamos ter a cor: '+ ((item.id+1) % chartColors.length))
+    disciplina = {
+      label: `${item.name}`,
+      fill: "false",
+      data: item.notas,
+      
+      borderColor: chartColors[(item.id+1)%chartColors.length], //aqui vai entrar aquele mecanismo de usar o id pra calcular o resto duma lista pra gerar sempre cor bonitinha da paleta.
+      lineTension: 0,
+      pointRadius: 1.3,
+      borderWidth: 3
+    }
+    myChart.data.datasets.push(disciplina)
+  })
+  myChart.update()
 }
 
 prontoBtn = document.getElementById('submit')
