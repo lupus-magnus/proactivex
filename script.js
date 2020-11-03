@@ -13,7 +13,7 @@ const remainDays = Math.round(Math.abs((firstDate - secondDate)/oneDay));
 console.log('remaining: '+ remainDays);
 console.log('total de dias: '+totalDays);
 toFill = document.getElementById('remainingDays');
-var completedPercentage = 100*(((totalDays - remainDays)/totalDays)).toFixed(1)
+var completedPercentage = 100*(((totalDays - remainDays)/totalDays)).toFixed(3)
 toFill.textContent = completedPercentage +'%'
 
 messagePlace = document.getElementById('message')
@@ -50,6 +50,7 @@ var myChart = new Chart(ctx, {
   type: 'line',
   data: {
       labels: ['P1', 'P2', 'P3', 'P4', 'P5'],
+      
       datasets: [{
           label: 'Cálculo 3',
           data: [8.75, 10.0, 8.6, 7.2, 8.5],
@@ -121,13 +122,19 @@ var materiasObj = [ //lista de vários objetos (cada um uma matéria)
   //  notas = array }
 ];
 
+
+
+
+
 function addSubject(){
   novaDisciplina = document.getElementById('disciplina1').value;
   novaNota = document.getElementById('nota1').value;
-  console.log(typeof(novaNota))
+  //console.log(typeof(novaNota))
   arrayNotas = []
   arrayNotas.push(parseFloat(novaNota))
 
+  
+  
   //Criando o objeto da disciplina:
   newData = {
     id: ids,
@@ -143,7 +150,7 @@ function addSubject(){
     <div class="col-5">
       ${novaDisciplina}
     </div>
-    <div class="col-5">
+    <div id='notas_materia${ids}' class="col-5">
       ${novaNota}
     </div>
     <div class="col-2">
@@ -151,7 +158,10 @@ function addSubject(){
     </div>
   </div>
   `
+  
+
   console.log(materiasObj);
+  update_addBtns_list()
   ids+=1
 }
 
@@ -171,4 +181,47 @@ letsGo.onclick = showForm
 addBtn = document.getElementById('addButton')
 addBtn.addEventListener('click',addSubject)
 
+//Trecho de código para adicionar notas à cada disciplina:
 
+var add_btns = []
+
+function addGrade(event){
+  id = event.target.id
+  valorNovo = (10*Math.random()).toFixed(1)
+  materiasObj[id].notas.push(valorNovo)
+  console.log(materiasObj[id].notas)
+  console.log("Clicamos no botão " + id)
+  novas_notas = document.getElementById(`notas_materia${id}`)
+  novas_notas.innerHTML += ', ' + valorNovo 
+}
+function update_addBtns_list(){
+  add_btns = document.getElementsByClassName('add-grade-btn')
+  console.log(`Our current add_btns array has ${add_btns.length} values\n ${add_btns}`)
+  Array.from(add_btns).forEach(function(item){
+    item.addEventListener('click', addGrade)
+})
+}
+
+//Agora, vamos tentar plotar nossos novos dados no gráfico!
+function updateChart(){
+  let dadoqualquer = [1,2,3,4,5]
+  //trecho para criar uma nova materia no gráfico:
+  let algonovo = {
+    label: "genérico_teste",
+    fill: "false",
+    data: dadoqualquer,
+    borderColor: "green", //aqui vai entrar aquele mecanismo de usar o id pra calcular o resto duma lista pra gerar sempre cor bonitinha da paleta.
+    lineTension: 0,
+    pointRadius: 1.3,
+    borderWidth: 3
+  }
+  myChart.data.datasets = [] //Limpa o gráfico. Pode ser usado num botão diferente, vamos pensar sobre.
+  myChart.data.datasets.push(algonovo)
+  console.log(myChart.data)
+  myChart.update();
+}
+
+prontoBtn = document.getElementById('submit')
+prontoBtn.addEventListener('click',updateChart)
+
+console.log(myChart.data)
