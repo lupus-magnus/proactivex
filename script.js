@@ -102,14 +102,15 @@ var myChart = new Chart(ctx, {
     ]
   },
   options: {
-    
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
-      }
+    maintainAspectRatio: false,
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
   }
 });
 

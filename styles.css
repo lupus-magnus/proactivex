@@ -47,15 +47,47 @@ body{
 /* Seção de gráficos */
 @media(min-width: 500px){
     #container{
+        height:400px !important;
         width: 70vw;
         margin: auto;
     }
+    #convite{
+        z-index: 1050;
+        min-height: 300px !important;
+        margin: auto;
+        background-color:#232b2b;
+        border-radius: 10px;
+        opacity: 0.6;
+        text-align: center;
+        top: -350px !important; 
+    }
 }
+
+@media(max-width: 500px){
+    #container{
+        height:300px !important;
+        width: 70vw;
+        margin: auto;
+    }
+
+
+    #convite{
+        z-index: 1050;
+        min-height: 200px;
+        margin: auto;
+        background-color:#232b2b;
+        border-radius: 10px;
+        opacity: 0.6;
+        text-align: center;
+        top: -225px;
+    }
+}
+
 #myChart{
     position: relative;
     /* vertical-align: middle; */
     text-align: center;
-    height: 0px;
+    height: 250px;
 }
 
 .blurred{
@@ -64,16 +96,7 @@ body{
 .row{
     margin: 15px;
 }
-#convite{
-    z-index: 1050;
-    padding: 70px;
-    margin: auto;
-    background-color:#232b2b;
-    border-radius: 10px;
-    opacity: 0.6;
-    text-align: center;
-    top: -300px;
-}
+
 
 #myForm{
     text-align: center;
