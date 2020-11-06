@@ -6,6 +6,10 @@ html,body{
     overflow-x: hidden; 
 }
 
+i{
+    color: #ddd;
+}
+
 body{
     background-color: #3b444b;
     color: #ddd;
@@ -14,6 +18,8 @@ body{
 
 #welcome{
      background-color:#232b2b; 
+     margin: 0;
+     max-height: 450px;
 }
 
 #header, h1{
@@ -27,6 +33,17 @@ body{
     100%{
         opacity: 1;
     }
+}
+
+/* Aqui, falarei da navbar */
+#navbar{
+    background-color: #232b2b;
+    margin-top: 0px;
+    
+}
+#navbar a{
+    text-decoration: none;
+    color: white;
 }
 
 #myProgress {
@@ -51,7 +68,15 @@ body{
 }
 
 /* Seção de gráficos */
+@media(min-width: 768px){
+    i{
+        display: none !important;
+    }
+}
+
 @media(min-width: 500px){
+
+    
     #container{
         height:400px !important;
         width: 70vw;
@@ -59,17 +84,21 @@ body{
     }
     #convite{
         z-index: 1050;
-        min-height: 300px !important;
+        height: 300px !important;
         margin: auto;
         background-color:#232b2b;
         border-radius: 10px;
         opacity: 0.6;
         text-align: center;
+        position: relative;
         top: -350px !important; 
     }
 }
 
 @media(max-width: 500px){
+    #welcome{
+        display: none;
+    }
     #container{
         height:300px !important;
         width: 70vw;
@@ -85,7 +114,8 @@ body{
         border-radius: 10px;
         opacity: 0.6;
         text-align: center;
-        top: -225px;
+        top: -225px !important;
+        position: relative;
     }
 }
 
@@ -93,7 +123,7 @@ body{
     position: relative;
     /* vertical-align: middle; */
     text-align: center;
-    height: 250px;
+    
 }
 
 .blurred{
