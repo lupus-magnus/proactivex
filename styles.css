@@ -6,6 +6,8 @@ html,body{
     overflow-x: hidden; 
 }
 
+p { margin:0 }
+
 i{
     color: #ddd;
 }
@@ -39,12 +41,26 @@ body{
 #navbar{
     background-color: #232b2b;
     margin-top: 0px;
+    z-index: 1500;
     
 }
 #navbar a{
     text-decoration: none;
     color: white;
 }
+.disabled-link{
+    pointer-events: none;
+}
+
+ #profile{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    /* margin: auto; */
+    margin: 20px auto 0px auto;
+} 
+
+
 
 #myProgress {
     width: 90%;
@@ -54,7 +70,7 @@ body{
   #myBar {
     width: 1%;
     height: 30px;
-    background-color: #810000;
+    background-color: #240000;
     
 }
 

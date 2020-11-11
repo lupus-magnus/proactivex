@@ -9,18 +9,19 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
     <!--Importando o nosso arquivo de estilização css-->
     <link rel="stylesheet" href="styles.css">
+    
     <!-- Importando a nossa fonte customizada para a marca-->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet"> 
+    
     <!--Importando os ícones-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
 <body>
-    <!--Importando o script do chart-->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-    
+       
     <!--Importando as dependências do bootstrap-->
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -40,6 +41,7 @@
             </div>
         </div>
     </div>
+    
     <!--Farei a navbar aqui!-->
     <nav class="navbar navbar-expand-md sticky-top" id="navbar">
     
@@ -88,79 +90,36 @@
         </div>
     </nav>
 
-    <!--Espaço do perfil pessoal-->
-    <div id="profile" class="container">
-        <div class="row d-flex justify-content-start">
-            <img style="display:inline; border-radius: 50%; border: 1px solid #810000;" src="imgs/model.jpeg" alt="" height="100px" width="100px">              
-            <div style='margin:15px'>
-                <h4 style="font-weight: 600;">Leonhard Ramanujan</h4>
-                <p>5º Período de Engenharia Nuclear.</p>
-                <p>Pesquisador bolsista CNPq em Engenharia de Reatores.</p>
-            </div>
-            </div>    
-        <div class="row">
-            <h5 style="font-weight: 600;">Conquistas:</h4>
-        </div>
-        <div class="row">
-            <img style="margin-right: 20px;" src="https://www.flaticon.com/svg/static/icons/svg/744/744954.svg" height="25px" alt=""> 
-            <img style="margin-right: 20px;" src="https://www.flaticon.com/premium-icon/icons/svg/190/190811.svg" height="25px" alt="">
-            <img style="margin-right: 20px;" src="https://www.flaticon.com/svg/static/icons/svg/610/610333.svg" height="25px" alt="">
-            <img style="margin-right: 20px;" src="https://www.flaticon.com/svg/static/icons/svg/3068/3068353.svg" height="25px" alt="">
-        </div>
-    </div>
-
-    <!--Barra de Progresso do período-->
-    <div id='progress-container' class='container'>
-        <h2>Parabéns! Você já completou <span id='remainingDays'></span> do PLE.</h2>
-        <p id="message"></p>
-        <div id="myProgress">
-            <div id="myBar"></div>
-          </div>
-    </div>
-    <div id='myForm' class='hidden'>
-        <form>
-            <h2>Organizador de Disciplinas</h2>
-            <p>Por favor, entre com as disciplinas cursadas e suas respectivas notas em cada uma. </p>
-            <p>Você vai gostar disso...</p>
-            <div id="disciplinas">
-                <div id="container-disciplinas">
-                    
-                </div>
+        <!-- A partir daqui é um trecho específico da página de guia.-->
+        
+        <div class="container">
+        
+            <h2 style="margin-top: 60px">Bem vindo!</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+        
+            <h2 style="margin-top: 60px">Horários</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+        
+            <h2 style="margin-top: 60px">Lista de Tarefas</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+        
+            <h2 style="margin-top: 60px">Agenda</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+        
+            <h2 style="margin-top: 60px">Calculadora de CR</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
             
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="disciplina1">Nova disciplina:</label><br>
-                        <input id='disciplina1' type="text" placeholder='História da Magia'>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="nota1">Nota:</label><br>
-                        <input type="number" min=0.0 max=10.0 step=0.1 placeholder='provavelmente zero...' id='nota1'>
-                    </div>
-                    
-                </div>           
-            <br>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <button type='button' id='addButton' class='btn btn-danger'>Adicionar</button>
-                </div>
-                <div class="col-sm-6">
-                    <button type='button' id='submit' class='btn btn-warning'>Pronto!</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div id="container"> <!--class="svg-container" -->
-        <canvas id="myChart" class='blurred' height="250px" role='img'></canvas>
-            <div id='convite' class='container align-middle d-flex flex-column align-items-center'>
-                <p class='my-auto'>Deseja fazer um acompanhamento personalizado do seu progresso?</p>
-                <button type='button' id='letsGo' class='btn btn-warning my-auto'>Vamos!</button>
-            </div>
+            <h2 style="margin-top: 60px">Histórico</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+            
+            <h2 style="margin-top: 60px">Autocontrole</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+        
+            <h2 style="margin-top: 60px">Ranking</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas dolore molestias veniam eos quisquam repudiandae saepe nam aspernatur debitis voluptates quidem neque rerum fugit, ipsam repellendus unde dolores! Architecto, ad?</p>
+        
         </div>
-    </div>
-    <script src="script.js"></script>
-    <script src="progressBar.js"></script>
-    <script src="ChartScripting.js"></script>
-    
-</body>
+
+        <script src="script.js"></script>
+    </body>
 </html>
